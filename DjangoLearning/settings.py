@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "hello",
     "birthday",
     "todo",
+    "flights",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
