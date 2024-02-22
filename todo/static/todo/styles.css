@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('back.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+
+#grid {
+    opacity: 0.9;
+    width: 200px;
+    border-radius: 15px;
+    display: grid;
+    padding: 20px;
+    margin: 15px;
+}
+
+.gridclass {
+    width: 100%;
+    max-width: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+}

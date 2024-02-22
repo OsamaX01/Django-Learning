@@ -2,15 +2,14 @@
 {% block title %} tasks {% endblock %}
 
 {% block body %}
-    <h3> TODO Tasks: </h3>
-    <ul>
+    <h3 class = "gridclass"> TODO Tasks: </h3>
+    <ul id = "grid">
         {% for task in tasks %}
-            <li> {{ task }} </li>
+            <li class = "gridclass"> {{ task }} </li>
         {% empty %}
-            <li> No items. </li>
+            <li class = "gridclass"> No items. </li>
         {% endfor %}
     </ul>
 
-    <br>
-    <a href = "{% url 'todo:add_task' %}"> Add task </a>
+    <a href = "{% url 'todo:add_task' %}" class="gridclass"> Add task </a>
 {% endblock %}
