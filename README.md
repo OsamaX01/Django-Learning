@@ -27,6 +27,11 @@ python3 manage.py makemigrations APP_NAME
 python3 manage.py migrate
 ```
 
+### Create Admin user
+```
+python3 manage.py createsuperuser
+```
+
 ### Enable admin for an application
 1. Create admin user: `python3 manage.py createsuperuser`
 1. In `admin.py` file, register the models you have in `models.py` file for each app as follows:
