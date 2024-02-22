@@ -17,6 +17,26 @@ python3 manage.py startapp APP_NAME
 python3 manage.py runserver
 ```
 
+### Make database migrations
+```
+python3 manage.py makemigrations APP_NAME
+```
+
+### Migrate database
+```
+python3 manage.py migrate
+```
+
+### Enable admin for an application
+1. Create admin user: `python3 manage.py createsuperuser`
+1. In `admin.py` file, register the models you have in `models.py` file for each app as follows:
+```
+from .models import MODEL1, MODEL2
+
+admin.site.register(MODEL1)
+admin.site.register(MODEL2)
+```
+
 ### Steps to do after starting a new app
 1. Add the app name to `INSTALLED_APPS` list in `settings.py` file.
 1. Create `urls.py` file inside the new app and add `urlpatterns` list containing the paths for your app. Also, add the variable `app_name = "APP_NAME"` to avoid name collisions.
