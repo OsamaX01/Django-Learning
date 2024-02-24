@@ -2,4 +2,14 @@
 
 {% block body %}
     <h1> {{ flight }} </h1>
+
+    <h2> Passengers </h2>
+    <ol> 
+        {% for passenger in passengers %}
+            <li> {{ passenger }} </li>
+        {% empty %}
+            <li> No Passengers Yet! </li>
+        {% endfor %}
+    </ol>
+    
 {% endblock %}
