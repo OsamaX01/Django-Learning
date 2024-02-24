@@ -4,7 +4,10 @@
     Flights:
     <ul> 
         {% for flight in flights %}
-            <li> {{flight.id}} : {{flight.origin}} to {{flight.destination}} </li>
+            <li> 
+                {{flight.id}} : {{flight.origin}} to {{flight.destination}}
+                : <a href = "{% url 'single_flight' flight.id %}"> Link </a>
+            </li>
         {% empty %}
             <li> No Flights Yet! </li>
         {% endfor %}
