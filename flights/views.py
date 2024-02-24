@@ -18,7 +18,7 @@ def single_flight(request, flight_id):
             "passengers" : flight.passengers.all(),
             "non_passengers" : Passenger.objects.exclude(flights = flight).all(),
         })
-    except:
+    except Flight.DoesNotExist:
         return render(request, "flights/error.html", {
             "message" : "No flight with the given id"
         })
