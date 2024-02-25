@@ -7,7 +7,7 @@
 django-admin startproject PROJECT_NAME
 ```
 
-### Add a new app to Django project
+### Add a new app to the Django project
 ```
 python3 manage.py startapp APP_NAME
 ```
@@ -50,7 +50,7 @@ admin.site.register(MODEL2)
 1. Also, you can create `static/APP_NAME` for static files such as `css` and `js` files and images.
 
 ## Git
-### Add description to your commit message
+### Add a description to your commit message
 ```
 git commit -m "Commit message" -m "Commit description line #1" -m "Commit description line #2"
 ```
@@ -65,14 +65,14 @@ git commit -m "Commit message" -m "Commit description line #1" -m "Commit descri
 
 ### Upload your work to your Repo
 1. `git clone LINK`
-1. Make a branch with a clear name for the feature you want to add: `git checkout -b BRANCH_NAME`. If the branch is already exist, then no need for the `-b` in the command.
+1. Make a branch with a clear name for the feature you want to add: `git checkout -b BRANCH_NAME`. If the branch already exists, then no need for the `-b` in the command.
 1. Modify your changes on your local device.
 1. When the modifications are finished: `git add *` to add all of the modified files.
 1. Commit your work and write a clear message for your commit: `git commit -m "Your Message"`.
 1. Push your work: `git push origin BRANCH_NAME`.
 1. Go to the repo in GitHub, and add your commit as a pull request.
 1. Go to Pull Requests and review your code.
-1. If your changes got approved then merge it to the main branch.
+1. If your changes got approved, merge them with the main branch.
 1. Delete the used branch once the feature you're working on is finished.
 
 ### Common .gitignore content
@@ -82,3 +82,73 @@ git commit -m "Commit message" -m "Commit description line #1" -m "Commit descri
 .vscode
 *.sqlite3
 ```
+
+## Naming Conventions
+### Variables
+- Use lowercase letters with words separated by underscores.
+- Nouns are preferred.
+- Boolean variables are preferred to start with `is` like `is_valid` 
+
+### Functions and Methods 
+- Use lowercase letters with words separated by underscores.
+- Verbs are preferred.
+- Boolean Functions and Methods are preferred to start with `is` like `is_valid()` 
+```python
+def my_function():
+    pass
+```
+
+### Classes
+- Class names should follow the UpperCaseCamelCase convention.
+- Nouns are preferred.
+```python
+class MyClass:
+    pass
+```
+
+### Constants
+- Use uppercase letters with words separated by underscores. Constants are typically used for variables that should not be changed.
+```python
+MAX_VALUE = 100
+```
+
+### Packages
+- Should also be lowercase with words separated by underscores.
+```python
+from my_package import my_module
+```
+
+### Private Variables and Methods
+Prefix names with a single leading underscore to indicate that they are intended for internal use.
+```python
+_internal_variable = 5
+
+def _internal_function():
+    pass
+```
+
+### Dunder (Double Underscore) Methods and Attributes: 
+- Use double underscores for special methods and attributes.
+```python
+class MyClass:
+    def __init__(self):
+      pass
+    def __str__(self):
+      pass
+```
+
+### Files 
+- Should also be lowercase with words separated by underscores.
+
+### Django
+- Project Name: The name of the Django project should be descriptive and follow Python's variable naming conventions (lowercase with underscores) e.g. `my_django_project/`.
+- Application Names: Django applications should also follow Python's variable naming conventions.
+- Database Models: like classes, CamelCase.
+- Views: like function.
+- Templates: Template files should be named with lowercase and may include underscores.
+              
+              my_app/
+              └── templates/
+                  └── my_app/
+                      └── my_template.html
+  
