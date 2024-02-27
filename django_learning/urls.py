@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path("app_navigator/", include("app_navigator.urls")),
     path("hello/", include("hello.urls")),
     path("birthday/", include("birthday.urls")),
     path("todo/", include("todo.urls")),
