@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> App Navigator </title>
+        <link href="{% static 'app_navigator/styles.css' %}" rel="stylesheet">
+    </head>
+    <bod> 
+        <h1> Welcome To App Navigator </h1>
+        <h3> Pick your app: </h3>
+        <div id = "container">
+            {% for app_name, app_url in apps %}
+                {% url app_url as the_url %}
+                {% if the_url  %}
+                    <a href="{{ the_url }}"> {{ app_name }} </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </bod>
+</html>
