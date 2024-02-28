@@ -7,7 +7,7 @@ def filter_out_django_apps(apps):
     apps_result.remove('app_navigator')
     return apps_result
 
-def add_urls(apps):
+def add_urls_to_app_names(apps):
     apps_result = []
     for app_name in apps:
         app_url = app_name + ":index"
@@ -20,7 +20,7 @@ def add_urls(apps):
 def index(request):
     apps = settings.INSTALLED_APPS
     apps = filter_out_django_apps(apps)    
-    apps = add_urls(apps)
+    apps = add_urls_to_app_names(apps)
     return render(request, "app_navigator/index.html", {
         "apps" : apps
     })
