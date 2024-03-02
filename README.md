@@ -155,8 +155,10 @@ class MyClass:
 ### Mysql with Django
 ### Connect MySQL DB
 1- In MySQL Client, create a database.
+
 2- In the `.env` file, add the 3 variables: DATABASE_NAME with the database name created in point 1, DATABASE_USER, and DATABASE_PASS. 
-In `settings.py` file, change the `DATABASES` variable to the following:
+
+3- In `settings.py` file, change the `DATABASES` variable to the following:
 ```
 DATABASES = {
     'default': {
