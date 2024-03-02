@@ -151,4 +151,21 @@ class MyClass:
               └── templates/
                   └── my_app/
                       └── my_template.html
-  
+
+### Mysql with Django
+### Connect MySQL DB
+1- In MySQL Client, create a database.
+2- In the `.env` file, add the 3 variables: DATABASE_NAME with the database name created in point 1, DATABASE_USER, and DATABASE_PASS. 
+In `settings.py` file, change the `DATABASES` variable to the following:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASS'),
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
