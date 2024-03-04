@@ -1,15 +1,18 @@
 {% extends 'flights/layout.html' %}
 
 {% block body %}
-    <h1> Flights: </h1>
-    <ul> 
-        {% for flight in flights %}
-            <li> 
-                {{flight.id}} : {{flight.origin}} to {{flight.destination}}
-                : <a href = "{% url 'flights:single_flight' flight.id %}"> Link </a>
-            </li>
-        {% empty %}
-            <li> No Flights Yet! </li>
-        {% endfor %}
-    </ul>
+    <div class="container mt-5">
+        <h1 class="mb-4">Flights:</h1>
+        <ul class="list-group">
+            {% for flight in flights %}
+                <li class="list-group-item mb-2">
+                    <span class="font-weight-bold">{{ flight.id }}:</span>
+                    {{ flight.origin }} to {{ flight.destination }}
+                    <a href="{% url 'flights:single_flight' flight.id %}" class="btn btn-primary float-end">View Details</a>
+                </li>
+            {% empty %}
+                <li class="list-group-item">No Flights Yet!</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
