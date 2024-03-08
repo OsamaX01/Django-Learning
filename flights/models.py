@@ -14,9 +14,13 @@ class Flight(models.Model):
     destination = models.ForeignKey(Airport, on_delete = models.CASCADE, related_name = "arrivals")
     duration = models.IntegerField()
 
+    def is_valid_flight(self):
+        return self.origin != self.destination and self.duration > 0
+
     def __str__(self):
         return f"{self.id} : {self.origin} to {self.destination}"
-    
+
+   
 class Passenger(models.Model):
     first_name = models.CharField(max_length = 64)
     last_name = models.CharField(max_length = 64)
