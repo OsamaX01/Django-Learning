@@ -30,5 +30,13 @@ jobs:
         echo "DATABASE_USER=${{ secrets.DATABASE_USER }}" >> $GITHUB_ENV
         echo "DATABASE_PASS=${{ secrets.DATABASE_PASS }}" >> $GITHUB_ENV
 
+    - name: Run Migrations
+      run: python manage.py migrate
+      env: 
+        DBENGINE: django.db.backends.mysql
+        DBNAME: ${{ secrets.DATABASE_NAME }}
+        DBUSER: ${{ secrets.DATABASE_USER }}
+        DBPASSWORD: ${{ secrets.DATABASE_PASS }}
+
     - name: Run tests
       run: python manage.py test
