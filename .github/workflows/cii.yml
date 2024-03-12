@@ -27,7 +27,9 @@ jobs:
     - name: Debug MySQL Connection
       run: |
         mysql --version
-        cat /path/to/mysql/error.log  # Adjust the path to your MySQL error log
+        service mysql status
+        cat /var/log/mysql/error.log  # Adjust the path to your MySQL error log
+
 
     - name: Create database
       run: |
