@@ -42,6 +42,15 @@ jobs:
         DBNAME: ${{ secrets.DATABASE_NAME }}
         DBUSER: ${{ secrets.DATABASE_USER }}
         DBPASSWORD: ${{ secrets.DATABASE_PASS }}
+        HOST: 'localhost',
+        PORT: '3306',
 
     - name: Run tests
       run: python manage.py test
+      env: 
+        DBENGINE: django.db.backends.mysql
+        DBNAME: ${{ secrets.DATABASE_NAME }}
+        DBUSER: ${{ secrets.DATABASE_USER }}
+        DBPASSWORD: ${{ secrets.DATABASE_PASS }}
+        HOST: 'localhost',
+        PORT: '3306',
