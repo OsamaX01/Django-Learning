@@ -26,7 +26,8 @@ jobs:
 
     - name: Create database
       run: |
-        mysql -u${{ secrets.DATABASE_USER }} -p${{ secrets.DATABASE_PASS }} -S /path/to/mysql.sock -e "CREATE DATABASE IF NOT EXISTS ${{ secrets.DATABASE_NAME }};"
+        mysql -u${{ secrets.DATABASE_USER }} -p${{ secrets.DATABASE_PASS }} -e "CREATE DATABASE IF NOT EXISTS ${{ secrets.DATABASE_NAME }};"
+
 
 
     - name: Run tests
