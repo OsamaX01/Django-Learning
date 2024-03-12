@@ -24,14 +24,14 @@ jobs:
         echo "DATABASE_USER=${{ secrets.DATABASE_USER }}" >> $GITHUB_ENV
         echo "DATABASE_PASS=${{ secrets.DATABASE_PASS }}" >> $GITHUB_ENV
 
-    - name: Create database
-      run: |
-        mysql -u${{ secrets.DATABASE_USER }} -p${{ secrets.DATABASE_PASS }} -e "CREATE DATABASE IF NOT EXISTS ${{ secrets.DATABASE_NAME }};"
-
     - name: Debug MySQL Connection
       run: |
         mysql --version
         cat /path/to/mysql/error.log  # Adjust the path to your MySQL error log
+
+    - name: Create database
+      run: |
+        mysql -u${{ secrets.DATABASE_USER }} -p${{ secrets.DATABASE_PASS }} -e "CREATE DATABASE IF NOT EXISTS ${{ secrets.DATABASE_NAME }};"
 
     - name: Run tests
       run: python manage.py test
